@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --verbose",
-    "transpile": "babel ./src --out-dir ./dist",
-    "prepublish": "npm run transpile && webpack"
+    "dev": "webpack -d --watch",
+    "prepublish": "webpack"
   },
   "author": "",
   "license": "ISC",

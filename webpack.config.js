@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    client: './dist/client.js'
+    client: './src/client.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
