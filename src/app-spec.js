@@ -4,7 +4,7 @@ import App from './app';
 import {shallow} from 'enzyme';
 
 test('should render power', t => {
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<App foo='7'/>);
   t.is(wrapper.text(), "343");
 });
 
