@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Login from './component/login'
 
 class App extends React.Component {
   render() {
-    const foo = this.props.foo**3;
-    return <div>{foo}</div>;
+    return <Login />;
   }
 }
 
