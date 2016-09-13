@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    client: './src/client.js'
+    index: './src/index.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -14,16 +14,13 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-      }, {
-        test: /\.less$/,
-        loader: "style!css!less"
-      }
-    ]
-
+    loaders: [{
+      test: /\.less$/,
+      loader: 'style!css!less'
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel'
+    }]
   }
 };
