@@ -5,7 +5,7 @@ import {shallow} from 'enzyme';
 
 test('should render power', t => {
   const wrapper = shallow(<App foo='7'/>);
-  t.is(wrapper.text(), "343");
+  t.is(wrapper.text(), '343');
 });
 
 test('bar', async t => {

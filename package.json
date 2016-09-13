@@ -18,6 +18,8 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "enzyme": "^2.4.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "react-addons-test-utils": "^15.3.1",
     "webpack": "^1.13.2"
   },
@@ -31,7 +33,7 @@
   },
   "ava": {
     "files": [
-      "src/**/*-spec.js"
+      "src/**/spec.js"
     ],
     "source": [
       "src/**/*.js"
