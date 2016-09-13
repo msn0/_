@@ -1,10 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Login from './component/login'
+import {connect} from 'react-redux';
+import Login from '../login';
+import styles from './styles.less';
 
 class App extends React.Component {
   render() {
-    return <Login />;
+    return (
+      <div className={styles['container']}>
+        <Login />
+      </div>
+    );
   }
 }
 
