@@ -1,5 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const env = process.env.NODE_ENV || 'development';
+
+const localClassName = env === 'development'
+  ? '[path][name]---[local]'
+  : '[hash:base64:10]';
 
 module.exports = {
   entry: {
@@ -16,7 +21,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.less$/,
-      loader: 'style!css!less'
+      loader: `style!css?modules&localIdentName=${localClassName}!less`
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
