@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const env = process.env.NODE_ENV || 'development';
 
 const localClassName = env === 'development'
@@ -16,12 +17,13 @@ module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new ExtractTextPlugin('styles.css')
   ],
   module: {
     loaders: [{
       test: /\.less$/,
-      loader: `style!css?modules&localIdentName=${localClassName}!less`
+      loader: ExtractTextPlugin.extract('style', `css?modules&localIdentName=${localClassName}!less`)
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
